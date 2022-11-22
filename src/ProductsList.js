@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react"
 import ListItem from "./ListItem"
 
@@ -17,25 +18,25 @@ const categories = ['animals', 'food']
 function ProductsList() {
     const [category, setCategory] = useState('')
 
-   return (
-      <div className='body'>
-         <ul className='categories'>
-            {categories.map(c => <li onClick={() => setCategory(c)} key={c}>{c}</li>)}
-            <li onClick={() => setCategory()}>all</li>
-         </ul>
+    return (
+        <div className='body'>
+            <ul className='categories'>
+                {categories.map(c => <li onClick={() => setCategory(c)} key={c}>  {c}</li>)}
+                <li onClick={() => setCategory()}>all</li>
+            </ul>
 
             <ul className='list-items'>
                 {items
-                .filter(item => !category ? true : item.category === category)
-                .map(i=>{
-                    return <ListItem 
-                    key={i.id} 
-                    id={i.id} 
-                    name={i.name}
-                    price={i.price}
-                    icon={i.icon}
-                    inStock={i.inStock} />
-                })}
+                    .filter(item => !category ? true : item.category === category)
+                    .map(i => {
+                        return <ListItem
+                            key={i.id}
+                            id={i.id}
+                            name={i.name}
+                            price={i.price}
+                            icon={i.icon}
+                            inStock={i.inStock} />
+                    })}
             </ul>
         </div>
     )
