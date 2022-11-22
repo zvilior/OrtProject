@@ -1,3 +1,4 @@
+import React from 'react';
 let props = {
     name: "sadas",
     price: 328
