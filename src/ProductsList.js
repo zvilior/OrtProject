@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import ListItem from "./ListItem"
 
 const items = [
@@ -12,7 +12,11 @@ const items = [
     { id: 7, name: 'lion', icon: '🦁', price: 1, category: 'animals', inStock: 3 },
     { id: 8, name: 'carrot', icon: '🥕', price: 15.3, category: 'food', inStock: 12 },
 ]
-
+useEffect(() => {
+    fetch('https://fakestoreapi.com/products')
+        .then(res => res.json())
+        .then(json => console.log(json))
+}, [])
 const categories = ['animals', 'food']
 
 function ProductsList() {

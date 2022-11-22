@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import ProductsList from './ProductsList';
-
 function App() {
 
   return (
@@ -9,7 +8,6 @@ function App() {
       <header className="App-header">
 
         <ProductsList />
-
 
       </header>
     </div>
